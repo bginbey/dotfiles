@@ -11,7 +11,7 @@
 - Use [this Ansible Playbook](https://github.com/bginbey/mac-dev-playbook)
 
 ## TODO: For Ansible Playbook
-#### NeoVim
+#### NeoVim extra setup steps
 ```bash
 # Symlink .neovim-init.vim to Neovim's default init.vim location
 ln -s ~/.neovim-init.vim ~/.config/nvim/init.vim
