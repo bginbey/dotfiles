@@ -17,6 +17,9 @@ fi
 # General UI/UX                                                               #
 ###############################################################################
 
+# Silence startup chime
+nvram SystemAudioVolume=%80
+
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
