@@ -11,19 +11,7 @@
 - Use [this Ansible Playbook](https://github.com/bginbey/mac-dev-playbook)
 
 ## TODO: For Ansible Playbook
-#### NeoVim extra setup steps
+#### OS X configuration
+- Change caps lock key to ctrl on wired and bluetooth keyboards by default
 ```bash
-# Symlink .neovim-init.vim to Neovim's default init.vim location
-ln -s ~/.neovim-init.vim ~/.config/nvim/init.vim
-
-# Clone plug.vim from github to Neovim's autoload directory
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# Open Neovim and install vim-plug plugins
-~/nvim -c 'PlugInstall|qa!'
-
-# Compile YouCompleteMe
-~/.local/share/nvim/plugged/YouCompleteMe/install.py \
-  --clang-completer
 ``` 
