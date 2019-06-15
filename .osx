@@ -13,6 +13,10 @@ else
   while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 fi
 
+###############################################################################
+# General UI/UX                                                               #
+###############################################################################
+
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
@@ -33,3 +37,57 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Finder: allow text selection in Quick Look
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Enable snap-to-grid for icons on the desktop and in other icon views
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+
+# Set the size of icons on the desktop and in other icon views
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 64" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 64" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 64" ~/Library/Preferences/com.apple.finder.plist
+
+# Use column view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+
+# Show the ~/Library folder
+chflags nohidden ~/Library
+
+###############################################################################
+# Dock
+###############################################################################
+
+# Set the icon size of Dock items
+defaults write com.apple.dock tilesize -int 32
+
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
+###############################################################################
+# TextEdit                                                                    #
+###############################################################################
+
+# Use plain text mode for new TextEdit documents
+defaults write com.apple.TextEdit RichText -int 0
+
+###############################################################################
+# Google Chrome                                                               #
+###############################################################################
+
+# Disable sensitive and senseless swipe-based navigation
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
+
+# Use the system print dialog
+defaults write com.google.Chrome DisablePrintPreview -bool true
