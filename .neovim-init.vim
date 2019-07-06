@@ -104,5 +104,6 @@ filetype plugin indent on
 " au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead *.gulpfile set ft=javascript
 " ignore files
-set wildignore+=**/node_modules
+set wildignore+=**/node_modules,.git,.vs
 set wildignore+=*.swp
+let g:NERDTreeRespectWildIgnore = 1
