@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 13,
+    fontSize: 14,
 
     // font family with optional fallbacks
     fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
@@ -21,7 +21,7 @@ module.exports = {
     fontWeightBold: 'bold',
 
     // line height as a relative unit
-    lineHeight: 1.25,
+    lineHeight: 1.5,
 
     // letter spacing as a relative unit
     letterSpacing: 0,
@@ -113,7 +113,7 @@ module.exports = {
     env: {},
 
     // set to `false` for no bell
-    bell: 'SOUND',
+    bell: false,
 
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: false,
