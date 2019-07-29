@@ -53,6 +53,7 @@ let g:syntastic_javascript_checkers = ["eslint"]
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen = 1
+let g:NERDTreeRespectWildIgnore = 1
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -104,6 +105,5 @@ filetype plugin indent on
 " au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead *.gulpfile set ft=javascript
 " ignore files
-set wildignore+=**/node_modules,.git,.vs
-set wildignore+=*.swp
-let g:NERDTreeRespectWildIgnore = 1
+set wildignore+=**/node_modules
+set wildignore+=*.swp,.DS_Store,.git,.vs
