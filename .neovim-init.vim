@@ -32,7 +32,7 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
 map <leader>d :edit .<CR>
-map <leader>f :CommandTFlush<CR>
+map <leader>f :CtrlPClearCache<CR>
 
 " Fix delete key errors on Macbook Pro
 " ------------------------------------------------
